@@ -45,11 +45,11 @@ export default function Index() {
           speedScale={0.6} />
 
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold tracking-tight mb-3 md:text-6xl">Understand Math 
-Don't Just Solve it.
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-3">Understand Math 
+
           </h1>
           <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl mx-auto">
-            Enter a problem, upload an image, or submit a PDF. Get detailed solutions with theorem references, interactive graphs, video explanations, and practice problems.
+            Type a problem, upload an image, or submit a PDF — get instant step-by-step solutions, graphs, and practice problems.
           </p>
           <ProblemInput onSolve={handleSolve} isLoading={isLoading} />
         </div>
