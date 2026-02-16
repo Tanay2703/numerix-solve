@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calculator, Grid3X3, FunctionSquare, Equal, Grid3x3 } from "lucide-react";
+import { Calculator, Grid3X3, FunctionSquare, Equal } from "lucide-react";
 
 export default function MathToolsSidebar() {
   return (
@@ -13,7 +13,7 @@ export default function MathToolsSidebar() {
       <Tabs defaultValue="calculator" className="w-full">
         <TabsList className="w-full grid grid-cols-3 bg-secondary/50">
           <TabsTrigger value="calculator" className="text-xs gap-1"><Calculator className="w-3 h-3" />Calc</TabsTrigger>
-          <Grid3x3 value="equation" className="text-xs gap-1"><Equal className="w-3 h-3" />Solve</Grid3x3>
+          
           <TabsTrigger value="desmos" className="text-xs gap-1"><FunctionSquare className="w-3 h-3" />Graph</TabsTrigger>
         </TabsList>
 
