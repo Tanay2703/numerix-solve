@@ -45,7 +45,7 @@ export default function Index() {
           speedScale={0.6} />
 
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold tracking-tight mb-3 md:text-6xl">Understand Math
+          <h1 className="text-3xl font-bold tracking-tight mb-3 md:text-6xl">Understand Math 
 Don't Just Solve it.
           </h1>
           <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl mx-auto">
