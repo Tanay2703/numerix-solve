@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { History, Home, BookOpen, Wrench, Lightbulb, House } from "lucide-react";
+import { Calculator, History, Home, BookOpen, Wrench, Clock } from "lucide-react";
 
 const navItems = [
 { path: "/", label: "Home", icon: Home },
@@ -15,11 +15,11 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between h-14 px-4">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg hero-gradient flex items-center justify-center">
-            <Lightbulb className="w-4 h-4 text-primary-foreground" />
+            <Calculator className="w-4 h-4 text-primary-foreground" />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-bold text-base text-foreground tracking-tight">NumeriX</span>
-            <span className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">POWERED BY GEMINI AI</span>
+            <span className="font-bold text-base text-foreground tracking-tight">AI Math Tutor</span>
+            <span className="text-[10px] text-muted-foreground font-medium tracking-widest uppercase">NumeriX</span>
           </div>
         </Link>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
                 "text-muted-foreground hover:text-foreground hover:bg-secondary"}`
                 }>
 
-                <House className="w-4 h-4" />
+                <Clock className="w-4 h-4" />
                 <span className="hidden sm:inline">{label}</span>
               </Link>);
 
