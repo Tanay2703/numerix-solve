@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { History, Home, BookOpen, Wrench, Lightbulb, Clock4 } from "lucide-react";
+import { History, Home, BookOpen, Wrench, Lightbulb, House } from "lucide-react";
 
 const navItems = [
 { path: "/", label: "Home", icon: Home },
@@ -36,7 +36,7 @@ export default function Navbar() {
                 "text-muted-foreground hover:text-foreground hover:bg-secondary"}`
                 }>
 
-                <Clock4 className="w-4 h-4" />
+                <House className="w-4 h-4" />
                 <span className="hidden sm:inline">{label}</span>
               </Link>);
 
