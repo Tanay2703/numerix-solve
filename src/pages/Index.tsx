@@ -42,32 +42,32 @@ export default function Index() {
           color="rgba(100,130,200,0.4)"
           glowColor="rgba(80,140,255,0.7)"
           opacity={0.5}
-          speedScale={0.6}
-        />
+          speedScale={0.6} />
+
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-3">
-            AI Math Tutor
+          <h1 className="text-3xl font-bold tracking-tight mb-3 md:text-6xl">Understand Math
+
           </h1>
           <p className="text-muted-foreground text-base md:text-lg mb-8 max-w-xl mx-auto">
-            Type a problem, upload an image, or submit a PDF — get instant step-by-step solutions, graphs, and practice problems.
+            Enter a problem, upload an image, or submit a PDF. Get detailed solutions with theorem references, interactive graphs, video explanations, and practice problems.
           </p>
           <ProblemInput onSolve={handleSolve} isLoading={isLoading} />
         </div>
       </section>
 
       {/* Solution */}
-      {solution && (
-        <section className="container mx-auto px-4 pb-16">
+      {solution &&
+      <section className="container mx-auto px-4 pb-16">
           <SolutionView data={solution} />
         </section>
-      )}
+      }
 
       {/* Resources */}
-      {!solution && (
-        <section className="container mx-auto px-4 pb-16">
+      {!solution &&
+      <section className="container mx-auto px-4 pb-16">
           <ResourceLinks />
         </section>
-      )}
-    </div>
-  );
+      }
+    </div>);
+
 }
