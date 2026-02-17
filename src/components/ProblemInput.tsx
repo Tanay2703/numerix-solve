@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Upload, FileText, Image, Loader2, Sparkles } from "lucide-react";
+import { Upload, FileText, Image, Loader2, Sparkles, CircleDot } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface ProblemInputProps {
@@ -29,23 +29,12 @@ export default function ProblemInput({ onSolve, isLoading }: ProblemInputProps) 
     }
 
     setFileName(file.name);
-
-    if (isImage) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64 = (reader.result as string).split(",")[1];
-        setImageBase64(base64);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      toast({ title: "PDF uploaded", description: "PDF text extraction will be handled by AI." });
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64 = (reader.result as string).split(",")[1];
-        setImageBase64(base64);
-      };
-      reader.readAsDataURL(file);
-    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = (reader.result as string).split(",")[1];
+      setImageBase64(base64);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleSolve = () => {
@@ -57,12 +46,18 @@ export default function ProblemInput({ onSolve, isLoading }: ProblemInputProps) 
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-4 animate-fade-in">
+    <div className="w-full space-y-3 animate-fade-in">
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-1">
+        <CircleDot className="w-4 h-4 text-primary" />
+        <h2 className="font-semibold text-foreground">Enter Your Question</h2>
+      </div>
+
       <Textarea
         value={problem}
         onChange={(e) => setProblem(e.target.value)}
-        placeholder="Type your math problem here... e.g., Solve x² + 5x + 6 = 0"
-        className="min-h-[120px] text-base bg-card border-border resize-none font-mono"
+        placeholder="Type your math problem here… (e.g., Solve for x: 2x² + 5x − 3 = 0)"
+        className="min-h-[140px] text-base bg-card border-border resize-none font-mono"
       />
 
       <div className="flex flex-wrap gap-3 items-center">
