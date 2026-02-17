@@ -1,12 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { Calculator, Clock, Wrench, Sun, Moon, BookOpen } from "lucide-react";
+import { Clock, Wrench, Sun, Moon, BookOpen, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
 const navItems = [
-  { path: "/", label: "Solver", icon: Calculator },
-  { path: "/tools", label: "Resources", icon: BookOpen },
-];
+{ path: "/", label: "Solver", icon: Calculator },
+{ path: "/tools", label: "Resources", icon: BookOpen }];
+
 
 export default function Navbar() {
   const location = useLocation();
@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between h-14 px-4">
         <Link to="/" className="flex items-center gap-2.5 group">
           <div className="w-8 h-8 rounded-full hero-gradient flex items-center justify-center">
-            <Calculator className="w-4 h-4 text-primary-foreground" />
+            <Lightbulb className="w-4 h-4 text-primary-foreground" />
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-bold text-base text-foreground tracking-tight">NumeriX</span>
@@ -34,14 +34,14 @@ export default function Navbar() {
                   key={path}
                   to={path}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                    active
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
+                  active ?
+                  "text-foreground" :
+                  "text-muted-foreground hover:text-foreground"}`
+                  }>
+
                   <span>{label}</span>
-                </Link>
-              );
+                </Link>);
+
             })}
           </nav>
 
@@ -49,12 +49,12 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
-            className="ml-2 text-muted-foreground hover:text-foreground"
-          >
+            className="ml-2 text-muted-foreground hover:text-foreground">
+
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </Button>
         </div>
       </div>
-    </header>
-  );
+    </header>);
+
 }
