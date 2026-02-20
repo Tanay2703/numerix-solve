@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { Calculator, Sun, Moon, BookOpen, Lightbulb } from "lucide-react";
+import { Calculator, Sun, Moon, BookOpen, Lightbulb, History, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
 const navItems = [
   { path: "/", label: "Solver", icon: Calculator },
-  { path: "/tools", label: "Resources", icon: BookOpen },
+  { path: "/history", label: "History", icon: History },
+  { path: "/tools", label: "Tools", icon: Wrench },
 ];
 
 
