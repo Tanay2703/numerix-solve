@@ -1,7 +1,7 @@
 
 ## Project info
 
-**URL**: (https://numerix-solve.lovable.app)
+**URL**: https://numerix-solve.lovable.app
 
 ## What technologies are used for this project?
 
